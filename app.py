@@ -5,7 +5,7 @@ from utils import send_chat_to_chatwoot
 app = FastAPI()
 
 @app.post("/api/webhook")
-async def webhook(request: Request, token) -> Response:
+async def webhook(request: Request) -> Response:
     body = await request.json()
     message = body.get("content")
 
